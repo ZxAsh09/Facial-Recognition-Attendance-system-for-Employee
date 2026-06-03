@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Face Recognition Attendance System</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h1>ATTENDANCE<br>SYSTEM</h1>
+
+    <a href="/">Dashboard</a>
+    <a href="/attendance">Take Attendance</a>
+    <a href="#">Register Employee</a>
+    <a href="/admin">Admin Panel</a>
+    <a href="/reports">Reports</a>
+    <a href="/settings">Settings</a>
+    <a href="/logout">Logout</a>
+</div>
+
+<div class="main">
+    <div class="header">
+        <h2>Face Recognition Dashboard</h2>
+        <p>{{ data.today }}</p>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Total Employees</h3>
+            <p>{{ data.total }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Present Today</h3>
+            <p>{{ data.present }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Late Entries</h3>
+            <p>{{ data.late }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Absent</h3>
+            <p>{{ data.absent }}</p>
+        </div>
+    </div>
+
+    <div class="table-box">
+        <h2>Today's Live Attendance</h2>
+
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>In Time</th>
+                <th>Out Time</th>
+                <th>Status</th>
+            </tr>
+
+            {% for row in data.rows %}
+            <tr>
+                <td>{{ row.Id }}</td>
+                <td>{{ row.Name }}</td>
+                <td>{{ row.Date }}</td>
+                <td>{{ row["In Time"] }}</td>
+                <td>{{ row["Out Time"] }}</td>
+                <td>{{ row.Status }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+<div class="table-box">
+
+    <h2>Live Camera Preview</h2>
+
+<div class="camera-box">
+
+    <img src="/video_feed">
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+    setInterval(() => {
+        location.reload();
+    }, 5000);
+</script>
+
+</body>
+</html>

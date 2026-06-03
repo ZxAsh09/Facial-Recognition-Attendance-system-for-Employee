@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Take Attendance</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h1>ATTENDANCE<br>SYSTEM</h1>
+
+    <a href="/">Dashboard</a>
+    <a href="/attendance">Take Attendance</a>
+    <a href="/register">Register Employee</a>
+    <a href="/admin">Admin Panel</a>
+    <a href="/reports">Reports</a>
+    <a href="/settings">Settings</a>
+    <a href="/logout">Logout</a>
+
+</div>
+
+<div class="main">
+
+    <div class="header">
+        <h2>Attendance Camera</h2>
+        <p>Live face recognition and automatic attendance marking</p>
+    </div>
+
+<div class="table-box camera-panel">
+
+    <h2>Live Camera Feed</h2>
+
+    <div class="camera-wrapper">
+
+        <div class="camera-status">
+            <span class="live-dot"></span>
+            Recognition Running
+        </div>
+
+        <div class="camera-box big-camera">
+            <img src="/video_feed">
+        </div>
+
+        <div class="camera-footer">
+
+            <p>
+                Keep your face centered and look directly at the camera.
+            </p>
+
+            <a href="/" class="action-btn">
+                Back to Dashboard
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+        </div>
+
+        <div class="table-box status-panel">
+
+            <h2>Recognition Status</h2>
+
+            <div class="status-card active">
+                <h3>Camera Status</h3>
+                <p>Running</p>
+            </div>
+
+            <div class="status-card">
+                <h3>Mode</h3>
+                <p>Auto Attendance</p>
+            </div>
+
+            <div class="status-card">
+                <h3>Instruction</h3>
+                <p>Look directly at the camera</p>
+            </div>
+
+            <a class="action-btn" href="/">
+                Back to Dashboard
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

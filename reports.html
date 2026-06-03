@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reports</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h1>ATTENDANCE<br>SYSTEM</h1>
+
+    <a href="/">Dashboard</a>
+    <a href="/attendance">Take Attendance</a>
+    <a href="/register">Register Employee</a>
+    <a href="/admin">Admin Panel</a>
+    <a href="/reports">Reports</a>
+    <a href="/settings">Settings</a>
+    <a href="/logout">Logout</a>
+
+</div>
+
+<div class="main">
+
+    <div class="header">
+        <h2>Attendance Reports</h2>
+        <p>Today's attendance records</p>
+    </div>
+
+    <div class="table-box">
+
+        <table>
+
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>In Time</th>
+                <th>Out Time</th>
+                <th>Status</th>
+            </tr>
+
+            {% for row in attendance %}
+
+            <tr>
+                <td>{{ row.Id }}</td>
+                <td>{{ row.Name }}</td>
+                <td>{{ row.Date }}</td>
+                <td>{{ row["In Time"] }}</td>
+                <td>{{ row["Out Time"] }}</td>
+                <td>{{ row.Status }}</td>
+            </tr>
+
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+</html>

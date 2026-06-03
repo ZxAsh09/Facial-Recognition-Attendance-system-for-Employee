@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="sidebar">
+    <h1>ATTENDANCE<br>SYSTEM</h1>
+
+    <a href="/">Dashboard</a>
+    <a href="/attendance">Take Attendance</a>
+    <a href="/register">Register Employee</a>
+    <a href="/admin">Admin Panel</a>
+    <a href="/reports">Reports</a>
+    <a href="/settings">Settings</a>
+    <a href="/logout">Logout</a>
+</div>
+
+<div class="main">
+
+    <div class="header">
+        <h2>Admin Panel</h2>
+        <p>Registered employee management</p>
+    </div>
+
+    <div class="table-box">
+        <h2>Employee List</h2>
+
+        <table>
+            <tr>
+                <th>Serial No</th>
+                <th>Employee ID</th>
+                <th>Name</th>
+            </tr>
+
+            {% for emp in employees %}
+            <tr>
+                <td>{{ emp["SERIAL NO."] }}</td>
+                <td>{{ emp.ID }}</td>
+                <td>{{ emp.NAME }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>
